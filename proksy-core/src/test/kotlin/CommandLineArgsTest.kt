@@ -8,7 +8,7 @@ import org.spekframework.spek2.style.specification.describe
 object CommandLineArgsSpec : Spek({
 
     val someUrl = "test.local"
-    val aFlag = "-flag"
+    val aFlag = "-h header"
 
     describe("Get the verb") {
         it("should get the verb when there are no flags and the verb is set") {
@@ -29,10 +29,5 @@ object CommandLineArgsSpec : Spek({
             cli.verb.`should be equal to`("POST")
         }
 
-        it("should get the verb when there is one flag wiand the verb is set") {
-            val cli = CommandLineArgs(arrayOf(aFlag, "POST", someUrl))
-
-            cli.verb.`should be equal to`("POST")
-        }
     }
 })
